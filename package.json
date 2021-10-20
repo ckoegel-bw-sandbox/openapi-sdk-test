@@ -4,8 +4,11 @@
   "description": "openapi js sdk test app",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js"
   },
   "author": "Cameron Koegel",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "franken_spec": "git+https://github.com/ckoegel-bw-sandbox/openapi-js-package-sdk.git"
+  }
 }
