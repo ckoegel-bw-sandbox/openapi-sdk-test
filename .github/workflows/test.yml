@@ -37,4 +37,4 @@ jobs:
         BW_MESSAGING_APPLICATION_ID: ${{ secrets.BW_MESSAGING_APPLICATION_ID }}
         BW_NUMBER: ${{ secrets.BW_NUMBER }}
         USER_NUMBER: ${{ secrets.USER_NUMBER }}
-      run: mocha
+      run: npx mocha
