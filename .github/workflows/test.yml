@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test 
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-2016, ubuntu-18.04]
+        node-version: ['12', '14', '16']
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install npm Package
+      run: npm install
+
+    - name: Build npm Package
+      run: npm run build --if-present
+
+    - name: Test npm Package
+      env:
+        BW_ACCOUNT_ID: ${{ secrets.BW_ACCOUNT_ID }}
+        BW_USERNAME: ${{ secrets.BW_USERNAME }}
+        BW_PASSWORD: ${{ secrets.BW_PASSWORD }}
+        BW_MESSAGING_APPLICATION_ID: ${{ secrets.BW_MESSAGING_APPLICATION_ID }}
+        BW_NUMBER: ${{ secrets.BW_NUMBER }}
+        USER_NUMBER: ${{ secrets.USER_NUMBER }}
+      run: mocha

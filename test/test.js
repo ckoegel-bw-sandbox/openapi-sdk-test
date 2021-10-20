@@ -1,4 +1,5 @@
 const NodeSdk = require('franken_spec');
+const expect = require('expect.js')
 
 const BW_ACCOUNT_ID = process.env.BW_ACCOUNT_ID;
 const BW_USERNAME = process.env.BW_USERNAME;
@@ -18,18 +19,15 @@ httpBasic.password = BW_PASSWORD;
 const messageApi = new  NodeSdk.MessagesApi();
 describe("Messaging Tests", function() {
     it("Create SMS Message", function() {
-        let message_text = "ruby sdk test SMS";
+        let message_text = "node sdk test SMS";
         let body = {
             applicationId: BW_MESSAGING_APPLICATION_ID,
             to: [USER_NUMBER],
             from: BW_NUMBER,
             text: message_text
         }
-        console.log(body)
-        console.log(BW_MESSAGING_APPLICATION_ID)
-        console.log(BW_ACCOUNT_ID)
-        let response = messageApi.createMessage(BW_ACCOUNT_ID, body)
-        console.log(response)
+        let response = messageApi.createMessage(BW_ACCOUNT_ID, body);
+        console.log(response);
     });
     
 });
