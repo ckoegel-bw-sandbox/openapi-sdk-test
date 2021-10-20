@@ -1,0 +1,11 @@
+{
+  "name": "openapi-sdk-test",
+  "version": "1.0.0",
+  "description": "openapi js sdk test app",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Cameron Koegel",
+  "license": "ISC"
+}
