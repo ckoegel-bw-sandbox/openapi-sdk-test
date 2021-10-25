@@ -10,7 +10,7 @@ const BW_PASSWORD = process.env.BW_PASSWORD;
 const BW_MESSAGING_APPLICATION_ID = process.env.BW_MESSAGING_APPLICATION_ID;
 const BW_VOICE_APPLICATION_ID = process.env.BW_VOICE_APPLICATION_ID;
 const BW_NUMBER = process.env.BW_NUMBER;
-const USER_NUMBER = "+19195556969";//process.env.USER_NUMBER;
+const USER_NUMBER = process.env.USER_NUMBER;
 const BASE_CALLBACK_URL = process.env.BASE_CALLBACK_URL;
 
 var apiClient = NodeSdk.ApiClient.instance;
