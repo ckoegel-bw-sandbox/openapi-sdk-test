@@ -9,7 +9,6 @@
   "author": "Cameron Koegel",
   "license": "ISC",
   "dependencies": {
-    "expect.js": "^0.3.1",
     "franken_spec": "git+https://github.com/ckoegel-bw-sandbox/openapi-js-package-sdk.git",
     "mocha": "^9.1.3"
   }
