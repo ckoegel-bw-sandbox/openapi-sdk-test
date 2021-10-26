@@ -452,7 +452,7 @@ describe("WebRTC Tests", function() {
         participantsApi.createParticipant(BW_ACCOUNT_ID, {participant: partBody}, createCallback);
     });
 
-    it("Failed Create, Get, and Delete Participant", function(done) {
+    it("Failed Create, Get, and Delete Participant", function(done) {   // Test to make sure correct errors are thrown when using invalid participant info
         let partBody = new NodeSdk.Participant();
         partBody.publishPermissions = ["VIDEO", "AUDIO", "INVALID"];
         partBody.deviceApiVersion = "V3";
@@ -487,7 +487,7 @@ describe("WebRTC Tests", function() {
 //-------------TN Lookup Tests-------------
 const tnLookupApi = new NodeSdk.PhoneNumberLookupApi();
 describe("TN Lookup Tests", function() {
-    it("Create and Get TN Lookup", function(done) {
+    it("Create and Get TN Lookup", function(done) {     // Test to create and get the status of a TN Lookup Request
         let tnBody = new NodeSdk.OrderRequest();
         tnBody.tns = [BW_NUMBER];
 
@@ -510,7 +510,7 @@ describe("TN Lookup Tests", function() {
         tnLookupApi.lookupRequest(BW_ACCOUNT_ID, tnBody, null, createCallback);
     });
 
-    it("Failed Create and Get TN Lookup", function(done) {
+    it("Failed Create and Get TN Lookup", function(done) {  // Test to make sure correct errors are thrown when trying to improperly create and get a TN Lookup Request
         let tnBody = new NodeSdk.OrderRequest();
         tnBody.tns = ["+1invalid"];
 
